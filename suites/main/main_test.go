@@ -13,6 +13,23 @@ const (
 	deviceAID = "device-a-id"
 )
 
+type testOptions struct {
+	skip bool
+}
+
+func (s *MainSuite) it(statement string, test func(), options ...testOptions) {
+	var o testOptions
+	if len(options) > 0 {
+		o = options[0]
+	}
+
+	if o.skip {
+		return
+	}
+
+	test()
+}
+
 func (s *MainSuite) TestBundleCourseInvalidCourseID() {
 	_, err := s.apiClient.courseBundle(courseBundleRequest{
 		OrgID:          s.org.ID,
@@ -41,29 +58,32 @@ func (s *MainSuite) TestBundleCourseLearnerFromOtherOrg() {
 }
 
 func (s *MainSuite) TestBundleCourse() {
-	courseBundleResp, err := s.apiClient.courseBundle(courseBundleRequest{
-		OrgID:          s.org.ID,
-		CourseID:       s.course.ID,
-		LearningPlanID: s.learningPlan.ID,
-		DeviceID:       "test-tablet123",
-		OfflineMode:    "SHARED",
-	}, s.orgAdmin)
-	s.Require().Nil(err)
-
-	var resp *courseBundleURLResponse
-	for i := 0; i < 10; i += 1 {
-		resp, err = s.apiClient.courseBundleURL(courseBundleResp.JobID, s.orgAdmin)
+	s.it("should bundle course", func() {
+		courseBundleResp, err := s.apiClient.courseBundle(courseBundleRequest{
+			OrgID:          s.org.ID,
+			CourseID:       s.course.ID,
+			LearningPlanID: s.learningPlan.ID,
+			DeviceID:       "test-tablet123",
+			OfflineMode:    "SHARED",
+		}, s.orgAdmin)
 		s.Require().Nil(err)
 
-		if strings.EqualFold(resp.BundleStatus, "BUNDLE_UPLOAD_COMPLETED") {
-			break
+		var resp *courseBundleURLResponse
+		for i := 0; i < 10; i += 1 {
+			resp, err = s.apiClient.courseBundleURL(courseBundleResp.JobID, s.orgAdmin)
+			s.Require().Nil(err)
+
+			if strings.EqualFold(resp.BundleStatus, "BUNDLE_UPLOAD_COMPLETED") {
+				break
+			}
+
+			time.Sleep(time.Second * 5)
+			i += 1
 		}
 
-		time.Sleep(time.Second * 5)
-		i += 1
-	}
+		s.Require().Equal("BUNDLE_UPLOAD_COMPLETED", resp.BundleStatus)
 
-	s.Require().Equal("BUNDLE_UPLOAD_COMPLETED", resp.BundleStatus)
+	})
 
 	invitations, err := s.apiClient.invitations(invitationsFilter{
 		courseID:      s.course.ID,
@@ -168,11 +188,11 @@ func (s *MainSuite) TestBundleCourse() {
 			}
 
 			if i == 2 {
-				c.Answer = []string{"Argentina", "France"}
+				c.Answer = []string{"65c5ec81-b1dd-43c4-aa5f-d569168f8316"}
 			}
 
 			if i == 3 {
-				c.Answer = []string{"False"}
+				c.Answer = nil
 			}
 		}
 	}
@@ -186,6 +206,24 @@ func (s *MainSuite) TestBundleCourse() {
 	for _, r := range syncEnrollmentsResp {
 		s.Require().True(r.Success, r.Message)
 	}
+
+	s.it("shuold approve and submit enrollments", func() {
+		for _, learningItemEnrollmentID := range learningItemEnrollmentIDs {
+			success, err := s.apiClient.approveEnrollment(approveEnrollmentRequest{
+				LearningItemEnrollmentId: learningItemEnrollmentID,
+				DeviceID:                 deviceAID}, s.orgAdmin)
+			s.Require().Nil(err)
+			s.Require().True(success)
+		}
+
+		enrollmentStatuses, err := s.apiClient.submitEnrollments(submitEnrollmentsRequest{InvitationIDs: []string{invitationID}}, s.orgAdmin)
+		s.Require().Nil(err)
+		s.Require().Equal(1, len(enrollmentStatuses))
+
+		for _, enrollmentStatus := range enrollmentStatuses {
+			s.Require().Contains(enrollmentStatus.Message, "Successfully updated", enrollmentStatus.Message)
+		}
+	}, testOptions{skip: true})
 
 }
 

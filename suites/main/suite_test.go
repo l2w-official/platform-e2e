@@ -1,8 +1,11 @@
 package main_suite_test
 
 import (
+	"bytes"
 	"database/sql"
 	"fmt"
+	"net/http"
+	"os"
 	"testing"
 	"time"
 
@@ -132,6 +135,31 @@ func (s *MainSuite) setupCourse() {
 	cards, err := s.apiClient.createCardsFromFile(lesson.ID, "./testdata/cards.json", s.orgAdmin)
 	s.Require().Nil(err)
 	s.Require().Equal(3, len(cards))
+
+	media, err := s.apiClient.createMedia(createMediaRequest{FileName: "image.jpg", MimeType: "image/jpeg"}, s.orgAdmin)
+	s.Require().Nil(err)
+	s.Require().NotEmpty(media.TemporaryPutURL)
+
+	img, err := os.ReadFile("./testdata/image.jpg")
+	s.Require().Nil(err)
+
+	imgReq, err := http.NewRequest(http.MethodPut, media.TemporaryPutURL, bytes.NewReader(img))
+	s.Require().Nil(err)
+
+	imgResp, err := http.DefaultClient.Do(imgReq)
+	s.Require().Nil(err)
+	s.Require().Equal(imgResp.StatusCode, http.StatusOK)
+
+	introCard := cards[0]
+	introCard.JSON.ContentBlocks[2].MediaID = &media.ID
+	introCard.JSON.ContentBlocks[2].Name = ptr("Test image")
+	introCard, err = s.apiClient.updateCard(updateCardRequest{
+		ID:    introCard.ID,
+		JSON:  introCard.JSON,
+		Title: "Test",
+		Media: []string{"/api/media/" + media.ID},
+	}, s.orgAdmin)
+	s.Require().Nil(err)
 
 	s.quiz, err = s.apiClient.createLearningItem(createLearningItemRequest{
 		Course:      "/api/courses/" + s.course.ID,

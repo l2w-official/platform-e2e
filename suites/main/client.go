@@ -504,3 +504,74 @@ func (cli *apiClient) getDuplicateEnrollments(req getDuplicateEnrollmentsRequest
 
 	return resp.LearningItemEnrollments, nil
 }
+
+type submitEnrollmentsRequest struct {
+	InvitationIDs []string `json:"invitationIds"`
+}
+type enrollmentStatus struct {
+	InvitationID string `json:"invitationId"`
+	Status       string `json:"status"`
+	Message      string `json:"message"`
+}
+
+func (cli *apiClient) submitEnrollments(req submitEnrollmentsRequest, credentials userCredentials) ([]*enrollmentStatus, error) {
+	var resp struct {
+		EnrollmentStatuses []*enrollmentStatus `json:"enrollmentStatuses"`
+	}
+	if err := cli.sendRequest(http.MethodPatch, "/v1/submit-enrollments", req, credentials, &resp); err != nil {
+		return nil, err
+	}
+
+	return resp.EnrollmentStatuses, nil
+}
+
+type approveEnrollmentRequest struct {
+	LearningItemEnrollmentId string `json:"LearningItemEnrollmentId"`
+	DeviceID                 string `json:"deviceId"`
+}
+
+func (cli *apiClient) approveEnrollment(req approveEnrollmentRequest, credentials userCredentials) (bool, error) {
+	var resp struct {
+		Success bool `json:"success"`
+	}
+	if err := cli.sendRequest(http.MethodPatch, "/v1/enrollment/approve", req, credentials, &resp, withContentType("application/merge-patch+json")); err != nil {
+		return false, err
+	}
+
+	return resp.Success, nil
+}
+
+type createMediaRequest struct {
+	FileName string `json:"fileName"`
+	MimeType string `json:"mimeType"`
+}
+
+type media struct {
+	ID              string `json:"id"`
+	TemporaryPutURL string `json:"temporaryPutUrl"`
+}
+
+func (cli *apiClient) createMedia(req createMediaRequest, credentials userCredentials) (*media, error) {
+	var resp *media
+	if err := cli.sendRequest(http.MethodPost, "/v1/media", req, credentials, &resp); err != nil {
+		return resp, err
+	}
+
+	return resp, nil
+}
+
+type updateCardRequest struct {
+	ID    string   `json:"-"`
+	Title string   `json:"title"`
+	JSON  any      `json:"json"`
+	Media []string `json:"media"`
+}
+
+func (cli *apiClient) updateCard(req updateCardRequest, credentials userCredentials) (*card, error) {
+	var resp card
+	if err := cli.sendRequest(http.MethodPatch, "/v1/cards/"+req.ID, req, credentials, &resp, withContentType("application/merge-patch+json")); err != nil {
+		return nil, err
+	}
+
+	return &resp, nil
+}
