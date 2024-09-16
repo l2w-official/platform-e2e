@@ -1,0 +1,613 @@
+{
+  "cards": [
+    {
+      "title": "Geography Test",
+      "type": "title",
+      "sequenceOrder": 0,
+      "confidenceCheck": false,
+      "json": {
+        "version": "1",
+        "description": "",
+        "templateType": null,
+        "contentBlocks": [
+          {
+            "id": "9b43085b-8eed-40b1-92f7-4f4ed41372fc",
+            "type": "title",
+            "json": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Geography Test"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e5975eab-b087-4f83-8105-ac0fb0037af5",
+            "type": "body",
+            "json": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "This is your body text. Start adding information for your learners here."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "514d3410-74f7-42d8-a69a-827363a46435",
+            "type": "image",
+            "mediaId": "",
+            "name": ""
+          }
+        ]
+      },
+      "media": []
+    },
+    {
+      "title": "Where is France?",
+      "type": "quiz",
+      "sequenceOrder": 1,
+      "confidenceCheck": true,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "1c8f4859-a454-42e2-97ca-fef465c3e856",
+            "type": "multipleChoice",
+            "multipleChoiceType": "selectone",
+            "randomize": false,
+            "correctFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "That’s correct!",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Keep it up and move on to the next card."
+                    }
+                  ]
+                }
+              ]
+            },
+            "incorrectFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Not quite",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "No worries, but that’s okay."
+                    }
+                  ]
+                }
+              ]
+            },
+            "question": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Where is the country of France?"
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "isCorrect": true,
+                "id": "65c5ec81-b1dd-43c4-aa5f-d569168f8316",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "Europe"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "isCorrect": false,
+                "id": "7921f5b6-66bd-4e33-8109-94cd1c4d4e18",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "North America"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "isCorrect": false,
+                "id": "e325f968-ee0c-4655-9b77-ec13a2f15a91",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "South America"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "isCorrect": false,
+                "id": "775dbc1f-15f5-4f70-9a4b-a700c7a91a4b",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "Africa"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "version": "1",
+        "templateType": "multipleChoice"
+      }
+    },
+    {
+      "title": "Europe",
+      "type": "quiz",
+      "sequenceOrder": 2,
+      "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
+      "confidenceCheck": true,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "1c8f4859-a454-42e2-97ca-fef465c3e856",
+            "type": "multipleChoice",
+            "multipleChoiceType": "selectall",
+            "randomize": false,
+            "correctFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "That’s correct!",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Keep it up and move on to the next card."
+                    }
+                  ]
+                }
+              ]
+            },
+            "incorrectFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Not quite",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "No worries, but that’s okay."
+                    }
+                  ]
+                }
+              ]
+            },
+            "question": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Which of these countries are in Europe?"
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "isCorrect": true,
+                "id": "65c5ec81-b1dd-43c4-aa5f-d569168f8316",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "France"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "isCorrect": false,
+                "id": "7921f5b6-66bd-4e33-8109-94cd1c4d4e18",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "United States"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "isCorrect": false,
+                "id": "e325f968-ee0c-4655-9b77-ec13a2f15a91",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "Netherlands"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "isCorrect": false,
+                "id": "775dbc1f-15f5-4f70-9a4b-a700c7a91a4b",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "Argentina"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "version": "1",
+        "templateType": "multipleChoice"
+      }
+    },
+    {
+      "title": "Select the country flags that are in Europe",
+      "type": "quiz",
+      "sequenceOrder": 3,
+      "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
+      "confidenceCheck": true,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "1c8f4859-a454-42e2-97ca-fef465c3e856",
+            "type": "multipleChoiceImage",
+            "multipleChoiceType": "selectall",
+            "randomize": false,
+            "correctFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "That’s correct!",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Keep it up and move on to the next card."
+                    }
+                  ]
+                }
+              ]
+            },
+            "incorrectFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Not quite",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "No worries, but that’s okay."
+                    }
+                  ]
+                }
+              ]
+            },
+            "question": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Select the country flags that are in Europe"
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "isCorrect": true,
+                "id": "65c5ec81-b1dd-43c4-aa5f-d569168f8316",
+                "optionMediaId": "{MEDIA_1}"
+              },
+              {
+                "isCorrect": false,
+                "id": "7921f5b6-66bd-4e33-8109-94cd1c4d4e18",
+                "optionMediaId": "{MEDIA_2}"
+              },
+              {
+                "isCorrect": false,
+                "id": "e325f968-ee0c-4655-9b77-ec13a2f15a91",
+                "optionMediaId": "{MEDIA_3}"
+              },
+              {
+                "isCorrect": false,
+                "id": "775dbc1f-15f5-4f70-9a4b-a700c7a91a4b",
+                "optionMediaId": "{MEDIA_4}"
+              }
+            ]
+          }
+        ],
+        "version": "1",
+        "templateType": "multipleChoiceImage"
+      }
+    },
+    {
+      "title": "Turkey",
+      "type": "quiz",
+      "sequenceOrder": 4,
+      "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
+      "confidenceCheck": true,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "8f1eac96-d82d-4e14-b1f7-86d21fb6debb",
+            "type": "trueFalse",
+            "options": [
+              {
+                "id": "2342a901-8f03-4da9-87ce-c17f9b63018f",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "True"
+                      }
+                    ]
+                  }
+                ],
+                "isCorrect": true
+              },
+              {
+                "isCorrect": false,
+                "id": "b889156c-c095-442a-889b-5717caed75f4",
+                "optionText": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "False"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "multipleChoiceType": "selectone",
+            "correctFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "That’s correct!",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Keep it up and move on to the next card."
+                    }
+                  ]
+                }
+              ]
+            },
+            "incorrectFeedback": {
+              "header": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Not quite",
+                      "bold": true
+                    }
+                  ]
+                }
+              ],
+              "body": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "No worries, but that’s okay."
+                    }
+                  ]
+                }
+              ]
+            },
+            "question": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Is the country of Turkey in one single continent?"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "version": "1",
+        "templateType": "trueFalse"
+      }
+    },
+    {
+      "title": "Free Response Card 1",
+      "type": "quiz",
+      "subType": "free_response",
+      "sequenceOrder": 5,
+      "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
+      "confidenceCheck": true,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "86ec501b-41c3-4819-9ce3-e63d6e028a2a",
+            "type": "freeResponse",
+            "question": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "What country do you want to visit and why?"
+                  }
+                ]
+              }
+            ],
+            "textResponseRequired": true,
+            "textResponseMinimumLength": 1,
+            "mediaResponseRequired": false
+          }
+        ],
+        "version": "1",
+        "templateType": "freeResponse"
+      }
+    },
+    {
+      "title": "Free Response Card 2",
+      "type": "quiz",
+      "subType": "free_response",
+      "sequenceOrder": 6,
+      "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
+      "confidenceCheck": true,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "86ec501b-41c3-4819-9ce3-e63d6e028a2b",
+            "type": "freeResponse",
+            "question": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "What countries have you visited in the past?"
+                  }
+                ]
+              }
+            ],
+            "textResponseRequired": true,
+            "textResponseMinimumLength": 1,
+            "mediaResponseRequired": false
+          }
+        ],
+        "version": "1",
+        "templateType": "freeResponse"
+      }
+    },
+    {
+      "title": "End Card",
+      "type": "end",
+      "sequenceOrder": 7,
+      "confidenceCheck": false,
+      "json": {
+        "version": "1",
+        "templateType": null,
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "40f605e3-c630-4fd7-8293-5a013382da3a",
+            "type": "title",
+            "json": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Congratulations on finishing this quiz!"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

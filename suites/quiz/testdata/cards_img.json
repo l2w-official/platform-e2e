@@ -1,0 +1,254 @@
+{
+  "cards": [
+    {
+      "type": "title",
+      "title": "Introduction to Geography",
+      "sequenceOrder": 0,
+      "confidenceCheck": false,
+      "json": {
+        "version": "1",
+        "description": "",
+        "templateType": null,
+        "contentBlocks": [
+          {
+            "id": "{{UUID1}}",
+            "type": "title",
+            "json": [
+              {
+                "children": [
+                  {
+                    "text": "Introduction to Geography"
+                  }
+                ],
+                "type": "title"
+              }
+            ]
+          },
+          {
+            "id": "{{UUID2}}",
+            "type": "body",
+            "json": [
+              {
+                "children": [
+                  {
+                    "text": "This is your body text. Start adding information for your learners here."
+                  }
+                ],
+                "type": "paragraph"
+              }
+            ]
+          },
+          {
+            "id": "{{UUID3}}",
+            "type": "image"
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "lesson",
+      "title": "Test Slideshow",
+      "sequenceOrder": 2,
+      "json": {
+        "description": "",
+        "contentBlocks": [
+          {
+            "id": "62ef896a-a08b-4512-9dda-38ee4a3230a7",
+            "type": "title",
+            "json": [
+              {
+                "type": "title",
+                "children": [
+                  {
+                    "text": "Slideshow Test"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bcb90457-f6a1-4f39-8641-dd428420893a",
+            "type": "slideshow",
+            "slides": [
+              {
+                "id": "slide1",
+                "type": "slide",
+                "contentBlocks": [
+                  {
+                    "id": "subtitle1a",
+                    "type": "subtitle",
+                    "json": [
+                      {
+                        "type": "subtitle",
+                        "children": [
+                          {
+                            "text": "Slideshow learner demo"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "image1a",
+                    "type": "image",
+                    "mediaId": "01924a6e-6f05-79e8-94bd-1f985a7774f7",
+                    "name": "cubes.png"
+                  },
+                  {
+                    "id": "subtitle1b",
+                    "type": "subtitle",
+                    "json": [
+                      {
+                        "type": "subtitle",
+                        "children": [
+                          {
+                            "text": "Each individual slide is scrollable"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+
+                  {
+                    "id": "image1b",
+                    "type": "image",
+                    "mediaId": "01924a6e-71e5-7ee2-8dd6-0b76d934a13e",
+                    "name": "cubes.png"
+                  },
+                  {
+                    "id": "image1c",
+                    "type": "image",
+                    "mediaId": "01924a6e-6f05-79e8-94bd-1f985a7774f7",
+                    "name": "cubes.png"
+                  }
+                ]
+              },
+
+              {
+                "id": "slide2",
+                "type": "slide",
+                "contentBlocks": [
+                  {
+                    "id": "subtitle2a",
+                    "type": "subtitle",
+                    "json": [
+                      {
+                        "type": "subtitle",
+                        "children": [
+                          {
+                            "text": "Slide 2"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "subtitle",
+                        "children": [
+                          {
+                            "text": "Text A"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "slide3",
+                "type": "slide",
+                "contentBlocks": [
+                  {
+                    "id": "subtitle3a",
+                    "type": "subtitle",
+                    "json": [
+                      {
+                        "type": "subtitle",
+                        "children": [
+                          {
+                            "text": "Slide 3"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "version": "1",
+        "templateType": "slideshow",
+        "titleSynced": true
+      }
+    },
+
+    {
+      "type": "end",
+      "title": "Congratulations!",
+      "sequenceOrder": 3,
+      "confidenceCheck": false,
+      "json": {
+        "version": "1",
+        "description": "",
+        "templateType": null,
+        "contentBlocks": [
+          {
+            "id": "{{UUID4}}",
+            "type": "title",
+            "json": [
+              {
+                "children": [
+                  {
+                    "text": "Congratulations on finishing this lesson!"
+                  }
+                ],
+                "type": "title"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "title": "Europe",
+      "sequenceOrder": 1,
+      "confidenceCheck": false,
+      "json": {
+        "version": "1",
+        "description": "",
+        "templateType": "text",
+        "contentBlocks": [
+          {
+            "id": "{{UUID5}}",
+            "type": "title",
+            "json": [
+              {
+                "children": [
+                  {
+                    "text": "Europe"
+                  }
+                ],
+                "type": "title"
+              }
+            ]
+          },
+          {
+            "id": "{{UUID6}}",
+            "type": "body",
+            "json": [
+              {
+                "children": [
+                  {
+                    "text": "There are 50 countries in Europe, but only 44 of them have their capital city on the European continent. The largest country in Europe is Russia, followed by Ukraine and France. The smallest country in Europe is Vatican City, which is only about 0.44 square kilometers (0.17 square miles) in area"
+                  }
+                ],
+                "type": "paragraph"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

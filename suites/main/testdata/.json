@@ -1,0 +1,75 @@
+{
+    "@context": "\/api\/contexts\/Card",
+    "@id": "\/api\/cards\/0191fa1d-fa01-7c8c-8d17-e0250d07c3d8",
+    "@type": "Card",
+    "id": "0191fa1d-fa01-7c8c-8d17-e0250d07c3d8",
+    "sequenceOrder": 0,
+    "type": "title",
+    "title": "Test",
+    "json": {
+        "version": "1",
+        "description": "",
+        "templateType": null,
+        "contentBlocks": [
+            {
+                "id": "{{UUID1}}",
+                "type": "title",
+                "json": [
+                    {
+                        "children": [
+                            {
+                                "text": "Introduction to Geography"
+                            }
+                        ],
+                        "type": "title"
+                    }
+                ]
+            },
+            {
+                "id": "{{UUID2}}",
+                "type": "body",
+                "json": [
+                    {
+                        "children": [
+                            {
+                                "text": "This is your body text. Start adding information for your learners here."
+                            }
+                        ],
+                        "type": "paragraph"
+                    }
+                ]
+            },
+            {
+                "id": "{{UUID3}}",
+                "type": "image",
+                "mediaId": "0191fa1e-0089-7f60-8f1f-beb5baf15d7e",
+                "name": "Test image"
+            }
+        ]
+    },
+    "learningItem": "\/api\/learning_items\/0191fa1d-f613-712e-afc9-83321b3bfd96",
+    "confidenceCheck": false,
+    "points": 1,
+    "media": [
+        {
+            "@id": "\/api\/media\/0191fa1e-0089-7f60-8f1f-beb5baf15d7e",
+            "@type": "Media",
+            "id": "0191fa1e-0089-7f60-8f1f-beb5baf15d7e",
+            "mimeType": "image\/jpeg",
+            "fileName": "image.jpg",
+            "temporaryGetUrl": "http:\/\/localhost:9000\/abc\/44b8d34b-740c-11ef-8a8e-0242ac120003\/0191fa1e-0089-7f60-8f1f-beb5baf15d7e?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minioadmin%2F20240916%2Fus-west-2%2Fs3%2Faws4_request\u0026X-Amz-Date=20240916T091556Z\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Expires=300\u0026X-Amz-Signature=822602c368e04b26a98faf669320b4b626ae8a812f7caf8f3a836eee4a80fc85",
+            "createdAt": "2024-09-16T09:15:55+00:00",
+            "updatedAt": "2024-09-16T09:15:55+00:00",
+            "createdBy": "",
+            "updatedBy": "",
+            "ownedBy": "44e55f02-740c-11ef-8a8e-0242ac120003"
+        }
+    ],
+    "cardVersionId": "0191fa1d-fa06-7dba-bfaa-fd9c6e4b9df1",
+    "subType": "common",
+    "createdAt": "2024-09-16T09:15:54+00:00",
+    "updatedAt": "2024-09-16T09:15:54+00:00",
+    "createdBy": "",
+    "updatedBy": "44e55f02-740c-11ef-8a8e-0242ac120003",
+    "ownedBy": "44e55f02-740c-11ef-8a8e-0242ac120003"
+}

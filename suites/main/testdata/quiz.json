@@ -48,7 +48,6 @@
             },
             "media": []
         },
-
         {
             "title": "Where is France?",
             "type": "quiz",
@@ -182,7 +181,6 @@
                 "templateType": "multipleChoice"
             }
         },
-
         {
             "title": "Europe",
             "type": "quiz",
@@ -317,11 +315,108 @@
                 "templateType": "multipleChoice"
             }
         },
-
+        {
+            "title": "Select the country flags that are in Europe",
+            "type": "quiz",
+            "sequenceOrder": 3,
+            "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
+            "confidenceCheck": true,
+            "json": {
+                "description": "",
+                "contentBlocks": [
+                    {
+                        "id": "1c8f4859-a454-42e2-97ca-fef465c3e856",
+                        "type": "multipleChoiceImage",
+                        "multipleChoiceType": "selectall",
+                        "randomize": false,
+                        "correctFeedback": {
+                            "header": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "text": "That’s correct!",
+                                            "bold": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "body": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "text": "Keep it up and move on to the next card."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "incorrectFeedback": {
+                            "header": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "text": "Not quite",
+                                            "bold": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "body": [
+                                {
+                                    "type": "paragraph",
+                                    "children": [
+                                        {
+                                            "text": "No worries, but that’s okay."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "question": [
+                            {
+                                "type": "title",
+                                "children": [
+                                    {
+                                        "text": "Select the country flags that are in Europe"
+                                    }
+                                ]
+                            }
+                        ],
+                        "options": [
+                            {
+                                "isCorrect": true,
+                                "id": "65c5ec81-b1dd-43c4-aa5f-d569168f8316",
+                                "optionMediaId": "{{MEDIA_ID_1}}"
+                            },
+                            {
+                                "isCorrect": false,
+                                "id": "7921f5b6-66bd-4e33-8109-94cd1c4d4e18",
+                                "optionMediaId": "{{MEDIA_ID_2}}"
+                            },
+                            {
+                                "isCorrect": false,
+                                "id": "e325f968-ee0c-4655-9b77-ec13a2f15a91",
+                                "optionMediaId": "{{MEDIA_ID_3}}"
+                            },
+                            {
+                                "isCorrect": false,
+                                "id": "775dbc1f-15f5-4f70-9a4b-a700c7a91a4b",
+                                "optionMediaId": "{{MEDIA_ID_3}}"
+                            }
+                        ]
+                    }
+                ],
+                "version": "1",
+                "templateType": "multipleChoiceImage"
+            }
+        },
         {
             "title": "Turkey",
             "type": "quiz",
-            "sequenceOrder": 3,
+            "sequenceOrder": 4,
             "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
             "confidenceCheck": true,
             "json": {
@@ -423,12 +518,10 @@
                 "templateType": "trueFalse"
             }
         },
-
-
         {
             "title": "Free Response Card",
             "type": "quiz",
-            "sequenceOrder": 4,
+            "sequenceOrder": 5,
             "learningItem": "/api/learning_items/0191b9d8-e85b-7a76-ab16-44c928ed11f1",
             "confidenceCheck": true,
             "json": {
@@ -456,11 +549,10 @@
                 "templateType": "freeResponse"
             }
         },
-
         {
             "title": "End Card",
             "type": "end",
-            "sequenceOrder": 5,
+            "sequenceOrder": 6,
             "confidenceCheck": false,
             "json": {
                 "version": "1",

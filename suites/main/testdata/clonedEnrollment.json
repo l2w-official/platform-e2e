@@ -1,0 +1,182 @@
+{
+    "courseEnrollmentId": "0191bf1e-36bf-7708-88fc-01cae34e20a1",
+    "courseId": "0191bf1d-b928-782a-8b6d-40b6e07054a4",
+    "data": [
+        {
+            "cardEnrollments": [
+                {
+                    "cardEnrollmentId": "0191bf1e-3d21-733c-97b6-053157ac9d0d",
+                    "cardId": "0191bf1d-c783-7ee3-a001-b5edfea61c3e",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaee8d8104",
+                    "cardId": "0191bf1d-c785-784a-9adf-f727b2081ab5",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaef862e6a",
+                    "cardId": "0191bf1d-c786-75b5-a1df-764fb1894d80",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaef8aaea9",
+                    "cardId": "0191bf1d-c786-75b5-a1df-764fb2df8e7c",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaefae8641",
+                    "cardId": "0191bf1d-c786-75b5-a1df-764fb49b34f6",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaefef8c45",
+                    "cardId": "0191bf1d-c787-7806-a422-0dfee01cc829",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                }
+            ],
+            "courseEnrollmentId": "0191bf1e-36bf-7708-88fc-01cae34e20a1",
+            "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+            "learningItemId": "0191bf1d-c43e-7db7-a972-fc805ec0971e"
+        },
+        {
+            "cardEnrollments": [
+                {
+                    "cardEnrollmentId": "0191bf1e-4043-73fd-994f-681f2d9ac2bb",
+                    "cardId": "0191bf1d-c10a-754f-952e-95795157abf1",
+                    "createdAt": "2024-09-04T22:18:36Z",
+                    "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:36Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-4043-73fd-994f-681f2de2e119",
+                    "cardId": "0191bf1d-c10d-76eb-aa84-e7e9c60ba152",
+                    "createdAt": "2024-09-04T22:18:36Z",
+                    "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:36Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-4043-73fd-994f-681f2e34b344",
+                    "cardId": "0191bf1d-c10d-76eb-aa84-e7e9c4e03ac5",
+                    "createdAt": "2024-09-04T22:18:36Z",
+                    "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:36Z"
+                }
+            ],
+            "courseEnrollmentId": "0191bf1e-36bf-7708-88fc-01cae34e20a1",
+            "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+            "learningItemId": "0191bf1d-bcaf-7389-a734-aed9cf2dc818"
+        }
+    ],
+    "invitationId": "0191bf1d-e355-7564-aaa4-5c3972caf134",
+    "learningItemEnrollments": [
+        {
+            "cardEnrollments": [
+                {
+                    "cardEnrollmentId": "0191bf1e-3d21-733c-97b6-053157ac9d0d",
+                    "cardId": "0191bf1d-c783-7ee3-a001-b5edfea61c3e",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaee8d8104",
+                    "cardId": "0191bf1d-c785-784a-9adf-f727b2081ab5",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaef862e6a",
+                    "cardId": "0191bf1d-c786-75b5-a1df-764fb1894d80",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaef8aaea9",
+                    "cardId": "0191bf1d-c786-75b5-a1df-764fb2df8e7c",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaefae8641",
+                    "cardId": "0191bf1d-c786-75b5-a1df-764fb49b34f6",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaefef8c45",
+                    "cardId": "0191bf1d-c787-7806-a422-0dfee01cc829",
+                    "createdAt": "2024-09-04T22:18:35Z",
+                    "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:35Z"
+                }
+            ],
+            "courseEnrollmentId": "0191bf1e-36bf-7708-88fc-01cae34e20a1",
+            "learningItemEnrollmentId": "0191bf1e-39bb-7473-afe1-623291e8fe9a",
+            "learningItemId": "0191bf1d-c43e-7db7-a972-fc805ec0971e"
+        },
+        {
+            "cardEnrollments": [
+                {
+                    "cardEnrollmentId": "0191bf1e-4043-73fd-994f-681f2d9ac2bb",
+                    "cardId": "0191bf1d-c10a-754f-952e-95795157abf1",
+                    "createdAt": "2024-09-04T22:18:36Z",
+                    "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:36Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-4043-73fd-994f-681f2de2e119",
+                    "cardId": "0191bf1d-c10d-76eb-aa84-e7e9c60ba152",
+                    "createdAt": "2024-09-04T22:18:36Z",
+                    "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:36Z"
+                },
+                {
+                    "cardEnrollmentId": "0191bf1e-4043-73fd-994f-681f2e34b344",
+                    "cardId": "0191bf1d-c10d-76eb-aa84-e7e9c4e03ac5",
+                    "createdAt": "2024-09-04T22:18:36Z",
+                    "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+                    "totalPoints": 1,
+                    "updatedAt": "2024-09-04T22:18:36Z"
+                }
+            ],
+            "courseEnrollmentId": "0191bf1e-36bf-7708-88fc-01cae34e20a1",
+            "learningItemEnrollmentId": "0191bf1e-3d2f-760c-8b56-7ddaf0d214b7",
+            "learningItemId": "0191bf1d-bcaf-7389-a734-aed9cf2dc818"
+        }
+    ],
+    "userId": "595b6d27-6a8f-11ef-b711-0242ac120003"
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "learningItemEnrollmentId": "0191bf42-7ddc-7883-9001-bf0cb668e211",
+        "courseEnrollmentId": "0191bf42-7ade-7f4a-8ebf-a2d5113992d9",
+        "learningItemId": "0191bf42-1cc1-7696-b737-8c037eebe8b1",
+        "deviceId": "device-a-id",
+        "startedAt": "2024-09-04T22:58:18.285Z",
+        "updatedAt": "2024-09-04T22:58:18.285Z"
+    },
+    {
+        "learningItemEnrollmentId": "0191bf42-80e5-70ce-8b9e-2b57f161bcc7",
+        "courseEnrollmentId": "0191bf42-7ade-7f4a-8ebf-a2d5113992d9",
+        "learningItemId": "0191bf42-1598-7998-910c-911842f73637",
+        "deviceId": "device-a-id",
+        "startedAt": "2024-09-04T22:58:18.285Z",
+        "updatedAt": "2024-09-04T22:58:18.285Z"
+    }
+]

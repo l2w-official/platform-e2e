@@ -5,6 +5,8 @@ import (
 	"errors"
 	"net/http"
 	"os"
+	"platform_e2e/pkg/client/model"
+	"platform_e2e/pkg/transport"
 	"strings"
 	"time"
 )
@@ -31,7 +33,7 @@ func (s *MainSuite) it(statement string, test func(), options ...testOptions) {
 }
 
 func (s *MainSuite) TestBundleCourseInvalidCourseID() {
-	_, err := s.apiClient.courseBundle(courseBundleRequest{
+	_, err := s.apiClient.CourseBundle(&model.CourseBundleRequest{
 		OrgID:          s.org.ID,
 		CourseID:       "not-found",
 		LearningPlanID: s.learningPlan.ID,
@@ -42,11 +44,11 @@ func (s *MainSuite) TestBundleCourseInvalidCourseID() {
 }
 
 func (s *MainSuite) TestBundleCourseLearnerFromOtherOrg() {
-	err := s.superAdmin.switchOrg(s.otherOrg.ID)
+	err := s.apiClient.SwitchOrg(s.otherOrg.ID, s.superAdmin)
 	s.Require().Nil(err)
 
-	for _, user := range []userCredentials{s.otherAdmin, s.superAdmin} {
-		_, err = s.apiClient.courseBundle(courseBundleRequest{
+	for _, user := range []*model.UserCredentials{s.otherAdmin, s.superAdmin} {
+		_, err = s.apiClient.CourseBundle(&model.CourseBundleRequest{
 			OrgID:          s.org.ID,
 			CourseID:       s.course.ID,
 			LearningPlanID: s.learningPlan.ID,
@@ -59,7 +61,7 @@ func (s *MainSuite) TestBundleCourseLearnerFromOtherOrg() {
 
 func (s *MainSuite) TestBundleCourse() {
 	s.it("should bundle course", func() {
-		courseBundleResp, err := s.apiClient.courseBundle(courseBundleRequest{
+		courseBundleResp, err := s.apiClient.CourseBundle(&model.CourseBundleRequest{
 			OrgID:          s.org.ID,
 			CourseID:       s.course.ID,
 			LearningPlanID: s.learningPlan.ID,
@@ -68,9 +70,9 @@ func (s *MainSuite) TestBundleCourse() {
 		}, s.orgAdmin)
 		s.Require().Nil(err)
 
-		var resp *courseBundleURLResponse
+		var resp *model.CourseBundleURLResponse
 		for i := 0; i < 10; i += 1 {
-			resp, err = s.apiClient.courseBundleURL(courseBundleResp.JobID, s.orgAdmin)
+			resp, err = s.apiClient.CourseBundleURL(courseBundleResp.JobID, s.orgAdmin)
 			s.Require().Nil(err)
 
 			if strings.EqualFold(resp.BundleStatus, "BUNDLE_UPLOAD_COMPLETED") {
@@ -85,9 +87,9 @@ func (s *MainSuite) TestBundleCourse() {
 
 	})
 
-	invitations, err := s.apiClient.invitations(invitationsFilter{
-		courseID:      s.course.ID,
-		invitedUserID: s.learnerInfo.ID,
+	invitations, err := s.apiClient.Invitations(&model.InvitationsFilter{
+		CourseID:      s.course.ID,
+		InvitedUserID: s.learnerInfo.ID,
 	}, s.orgAdmin)
 	s.Require().Nil(err)
 	s.Require().Equal(1, len(invitations))
@@ -95,14 +97,14 @@ func (s *MainSuite) TestBundleCourse() {
 
 	invitationID := invitations[0].ID
 
-	_, err = s.apiClient.invitationEnroll(invitationEnrollRequest{InvitationID: "not-found"}, s.orgAdmin)
+	_, err = s.apiClient.InvitationEnroll(&model.InvitationEnrollRequest{InvitationID: "not-found"}, s.orgAdmin)
 	s.httpCode(err, http.StatusNotFound, "could not find invitation")
 
-	invitationEnrollResp, err := s.apiClient.invitationEnroll(invitationEnrollRequest{InvitationID: invitationID}, s.orgAdmin)
+	invitationEnrollResp, err := s.apiClient.InvitationEnroll(&model.InvitationEnrollRequest{InvitationID: invitationID}, s.orgAdmin)
 	s.Require().Nil(err)
 
 	for i := 0; i < 5; i += 1 {
-		invitationEnrollResp, err = s.apiClient.enrollmentJob(invitationEnrollResp.ID, s.orgAdmin)
+		invitationEnrollResp, err = s.apiClient.EnrollmentJob(invitationEnrollResp.ID, s.orgAdmin)
 		s.Require().Nil(err)
 
 		if strings.EqualFold(invitationEnrollResp.Status, "ENROLLMENT_COMPLETED") {
@@ -115,13 +117,13 @@ func (s *MainSuite) TestBundleCourse() {
 
 	s.Require().Equal("ENROLLMENT_COMPLETED", invitationEnrollResp.Status)
 
-	_, err = s.apiClient.cloneEnrollment(cloneEnrollmentRequest{}, s.orgAdmin)
+	_, err = s.apiClient.CloneEnrollment(&model.CloneEnrollmentRequest{}, s.orgAdmin)
 	s.httpCode(err, http.StatusBadRequest, "invitationId is required")
 
-	_, err = s.apiClient.cloneEnrollment(cloneEnrollmentRequest{InvitationID: "invalid"}, s.orgAdmin)
+	_, err = s.apiClient.CloneEnrollment(&model.CloneEnrollmentRequest{InvitationID: "invalid"}, s.orgAdmin)
 	s.httpCode(err, http.StatusNotFound, "could not find invitation")
 
-	cloneEnrollmentResp, err := s.apiClient.cloneEnrollment(cloneEnrollmentRequest{InvitationID: invitationID}, s.orgAdmin)
+	cloneEnrollmentResp, err := s.apiClient.CloneEnrollment(&model.CloneEnrollmentRequest{InvitationID: invitationID}, s.orgAdmin)
 	s.Require().Nil(err)
 
 	b, _ := json.Marshal(cloneEnrollmentResp)
@@ -162,7 +164,7 @@ func (s *MainSuite) TestBundleCourse() {
 
 		}
 	}
-	syncEnrollmentsResp, err := s.apiClient.syncEnrollments(syncEnrollmentRequest{LearningItemEnrollments: learningItemEnrollments}, s.orgAdmin)
+	syncEnrollmentsResp, err := s.apiClient.SyncEnrollments(&model.SyncEnrollmentRequest{LearningItemEnrollments: learningItemEnrollments}, s.orgAdmin)
 	s.Require().Nil(err)
 
 	b, _ = json.Marshal(syncEnrollmentsResp)
@@ -197,7 +199,7 @@ func (s *MainSuite) TestBundleCourse() {
 		}
 	}
 
-	syncEnrollmentsResp, err = s.apiClient.syncEnrollments(syncEnrollmentRequest{LearningItemEnrollments: learningItemEnrollments}, s.orgAdmin)
+	syncEnrollmentsResp, err = s.apiClient.SyncEnrollments(&model.SyncEnrollmentRequest{LearningItemEnrollments: learningItemEnrollments}, s.orgAdmin)
 	s.Require().Nil(err)
 
 	b, _ = json.Marshal(syncEnrollmentsResp)
@@ -209,14 +211,14 @@ func (s *MainSuite) TestBundleCourse() {
 
 	s.it("shuold approve and submit enrollments", func() {
 		for _, learningItemEnrollmentID := range learningItemEnrollmentIDs {
-			success, err := s.apiClient.approveEnrollment(approveEnrollmentRequest{
+			success, err := s.apiClient.ApproveEnrollment(&model.ApproveEnrollmentRequest{
 				LearningItemEnrollmentId: learningItemEnrollmentID,
 				DeviceID:                 deviceAID}, s.orgAdmin)
 			s.Require().Nil(err)
 			s.Require().True(success)
 		}
 
-		enrollmentStatuses, err := s.apiClient.submitEnrollments(submitEnrollmentsRequest{InvitationIDs: []string{invitationID}}, s.orgAdmin)
+		enrollmentStatuses, err := s.apiClient.SubmitEnrollments(&model.SubmitEnrollmentsRequest{InvitationIDs: []string{invitationID}}, s.orgAdmin)
 		s.Require().Nil(err)
 		s.Require().Equal(1, len(enrollmentStatuses))
 
@@ -228,11 +230,11 @@ func (s *MainSuite) TestBundleCourse() {
 }
 
 func (s *MainSuite) httpCode(err error, code int, msg ...string) {
-	var httpErr *httpError
+	var httpErr *transport.HttpError
 
 	s.Require().True(errors.As(err, &httpErr))
 
-	s.Assert().Equal(code, httpErr.code)
+	s.Assert().Equal(code, httpErr.Code)
 
 	if len(msg) > 0 {
 		s.Assert().Contains(err.Error(), msg[0])
